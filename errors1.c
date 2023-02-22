@@ -11,10 +11,16 @@ int _erratoi(char *s)
 	int i = 0;
 	unsigned long int result = 0;
 
+<<<<<<< HEAD
 
 	if (*s == '+')
 		s++; /* TODO: why does this make main return 255? */
 	for (i = 0; s[i] != '\0'; i++)
+=======
+	if (*s == '+')
+		s++;  /* TODO: why does this make main return 255? */
+	for (i = 0;  s[i] != '\0'; i++)
+>>>>>>> d6437f90a745d189010a53e3451972cf70ab5512
 	{
 		if (s[i] >= '0' && s[i] <= '9')
 		{
@@ -23,7 +29,12 @@ int _erratoi(char *s)
 			if (result > INT_MAX)
 				return (-1);
 		}
+<<<<<<< HEAD
 		return (-1);
+=======
+		else
+			return (-1);
+>>>>>>> d6437f90a745d189010a53e3451972cf70ab5512
 	}
 	return (result);
 }
@@ -31,11 +42,19 @@ int _erratoi(char *s)
 /**
  * print_error - prints an error message
  * @info: the parameter & return info struct
+<<<<<<< HEAD
  * @str: string containing specified err type
  * Return: 0 if no number in string, converted number otherwise
  * -1 on error
  */
 void print_error(info_t *info, char *str)
+=======
+ * @estr: string containing specified error type
+ * Return: 0 if no numbers in string, converted number otherwise
+ * -1 on error
+ */
+void print_error(info_t *info, char *estr)
+>>>>>>> d6437f90a745d189010a53e3451972cf70ab5512
 {
 	_eputs(info->fname);
 	_eputs(": ");
@@ -49,9 +68,15 @@ void print_error(info_t *info, char *str)
 /**
  * print_d - function prints a decimal (integer) number (base 10)
  * @input: the input
+<<<<<<< HEAD
  * @fd: the file descriptor to write to
  *
  * Return: the number of characters printed
+=======
+ * @fd: the filedescriptor to write to
+ *
+ * Return: number of characters printed
+>>>>>>> d6437f90a745d189010a53e3451972cf70ab5512
  */
 int print_d(int input, int fd)
 {
@@ -105,12 +130,20 @@ char *convert_number(long int num, int base, int flags)
 	{
 		n = -num;
 		sign = '-';
+<<<<<<< HEAD
+=======
+
+>>>>>>> d6437f90a745d189010a53e3451972cf70ab5512
 	}
 	array = flags & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
 	ptr = &buffer[49];
 	*ptr = '\0';
 
+<<<<<<< HEAD
 	do  {
+=======
+	do {
+>>>>>>> d6437f90a745d189010a53e3451972cf70ab5512
 		*--ptr = array[n % base];
 		n /= base;
 	} while (n != 0);
@@ -121,19 +154,34 @@ char *convert_number(long int num, int base, int flags)
 }
 
 /**
+<<<<<<< HEAD
  * remove_comments - function replaces first instance of '#' with  '\0'
  * @buf: address of the string to modify
  *
  * Return: Always 0.
+=======
+ * remove_comments - function replaces first instance of '#' with '\0'
+ * @buf: address of the string to modify
+ *
+ * Return: Always 0;
+>>>>>>> d6437f90a745d189010a53e3451972cf70ab5512
  */
 void remove_comments(char *buf)
 {
 	int i;
 
 	for (i = 0; buf[i] != '\0'; i++)
+<<<<<<< HEAD
 		if (buf[i] == '#' && (!i || buf[i - 1] == ' '))
 		{
 			buf[i] = '\0';
 			break;
 		}
+=======
+	if (buf[i] == '#' && (!i || buf[i - 1] == ' '))
+	{
+		buf[i] = '\0';
+		break;
+	}
+>>>>>>> d6437f90a745d189010a53e3451972cf70ab5512
 }
